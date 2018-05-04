@@ -78,7 +78,27 @@
     }
 }
 label.error_label {
-    color:  red;
+    color:  #0000e6;
     font-weight:  bold;
     padding-left: 12px;
 }
+.err_sign_up {
+    width:  100%;
+    text-align:  center;
+}
+
+.err_sign_up label,.err_sign_up .material-icons {
+    color: #2da905;
+    font-size: 20px;
+    font-weight:  bold;
+}
+.err_label {
+    color: #d20404 !important;
+}
+.example-appear {
+    opacity: 0.01;
+ }
+ .example-appear.example-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+ }
