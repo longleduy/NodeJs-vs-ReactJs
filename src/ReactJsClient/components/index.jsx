@@ -1,34 +1,30 @@
-import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router-dom';
-import { callApi } from '../utils/apiCaller';
-import SignUp from './accounts/sign_up_from.jsx';
-import SignIn from './accounts/sign_in_form.jsx';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-const style = {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-}
+import React, { Component, Fragment } from 'react'
+import { Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+import * as Common from '../utils/common'
+import ReactCSSTransitionGroup  from 'react-addons-css-transition-group'
 export default class Index extends Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount(){
+       // this.props.actFetchDataApiReques();
+    }
     render() {
-        let token = localStorage.getItem('token');
+        // let {user_name} = this.props;
+        let token = Common.getItemLocalStorage('token');
         if(token == null){
             return <Redirect to='/authen_failed' />
         }
         return (
             <Fragment>
-                <form>
-                    <div className="col s12" style={style}>
-                        <img src="http://mothershape.com/wp-content/uploads/2017/07/41-512.png" className="verify_img" style={{
-                            width: '30%',
-                            opacity: '.8'
-                        }} />
+                <ReactCSSTransitionGroup transitionName="example"
+                    transitionAppear={true} transitionAppearTimeout={500}
+                >
+                    <div className="home-div">
+                        <label className='home-big-title'>Permisson Verified</label>
                     </div>
-                </form>
+                </ReactCSSTransitionGroup>
             </Fragment >
         )
     }

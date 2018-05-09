@@ -10,3 +10,11 @@ export const  callApi =  (endpoint, method = 'GET', body) => {
         console.log(err)
     })
 }
+export const getApi =  (endpoint, params) => {
+    return  axios.get(`${_API_URL}/${endpoint}`, {
+        params: params,
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+}

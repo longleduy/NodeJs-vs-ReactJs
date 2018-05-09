@@ -1,9 +1,7 @@
 import {combineReducers} from 'redux';
-import products from './products';
-import cards from './cards';
-import login from './login';
-import productInfo from './productInfo';
-var myReducer = combineReducers({
-    login
+import sign_in_success from './sign_in_success';
+
+const myReducer = combineReducers({
+    sign_in_success
 })
 export default myReducer;
